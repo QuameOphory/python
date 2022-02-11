@@ -3,7 +3,10 @@ import json
 import requests
 
 #uses the requests library to get json data from jsonplaceholder site
-response = requests.get("https://jsonplaceholder.typicode.com/todos")
+try:
+    response = requests.get("https://jsonplaceholder.typicode.com/todos")
+except:
+    print('No network...failed to access the API')
 #uses the loads method to deserialize the json data
 todos = json.loads(response.text)
 #create a dictionary of completed TODOs by each user
