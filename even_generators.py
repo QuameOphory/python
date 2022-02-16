@@ -15,7 +15,7 @@ def even_generator(n):
 def fibonacci_generator(n):
     a, b, count = 0, 1, 1
     while count <= n:
-        yield a
+        yield b
         a, b = b, a+b
         count += 1
 
@@ -28,4 +28,4 @@ def main():
 if __name__ == '__main__':
     # main()
     for i in fibonacci_generator(10):
-        print(i)
+        print(i, end=' ')
